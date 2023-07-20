@@ -7,7 +7,7 @@ function Funprops2(props) {
     const[changename,setchangename] = useState(props.name);
 
     function changenamefun(){
-        let uppercasename = changename?.toUpperCase();
+        let uppercasename = changename.toUpperCase();
         setchangename(uppercasename);
     }
   return (
