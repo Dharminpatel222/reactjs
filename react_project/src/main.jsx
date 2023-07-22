@@ -80,7 +80,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
     {/* //================================================// */}
 
-      <Task />
-
+    <Task inputType={"password"} />
   </React.StrictMode>
 );
