@@ -1,35 +1,96 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+
+import Classcom from "../Classcomponet/Classcom.jsx";
+import Side_main from "../Classcomponet/Side_main.jsx";
+import Footer from "../Classcomponet/Footer.jsx";
+import Headerfuncomp from "../Functionalcomponet/Headerfuncomp.jsx";
+import Side_mainfun from "../Functionalcomponet/Side_mainfun.jsx";
+import Footerfun from "../Functionalcomponet/Footerfun.jsx";
+import UsrState from "../UseState/UsrState.jsx";
+import Stateproject from "../UseState/Stateproject.jsx";
+import Stateproject2 from "../UseState/Stateproject2.jsx";
+import Funprops from "../Props/Funprops.jsx";
+import Funprops2 from "../Props/Funprops2.jsx";
+import Classprops from "../Props/Classprops.jsx";
+import Distructuringprops from "../Props/Distructuringprops.jsx";
+import Fragment from "../ConditionalRen-map-fragment/Fragment.jsx";
+import ConditionalRen from "../ConditionalRen-map-fragment/ConditionalRen.jsx";
+import MapKey from "../ConditionalRen-map-fragment/MapKey.jsx";
+import Task from "../ConditionalRen-map-fragment/Task.jsx";
+import BasicExample from '../CardProject/Bootstrap';
+import MapCom from '../CardProject/MapCom';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <h3>{h2}</h3>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
+      {/* <Classcom/>
+    <Side_main />       
+    <Footer  /> */}
 
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {/* ============================================= */}
+
+      {/* <Headerfuncomp  />
+      <Side_mainfun />     
+      <Footerfun /> */}
+
+      {/* //=================================================// */}
+
+      {/* <UsrState /> */}
+
+      {/* //=====================================================// */}
+
+      {/* <Stateproject /> */}
+
+      {/* //========================================================// */}
+
+      {/* <Stateproject2 /> */}
+
+      {/* //=========================================================// */}
+      {/* 
+    <Funprops title = {"Dharmin"} />
+      <Funprops obj = {{
+        name : "Nihar",
+        age : 23
+      }} /> */}
+
+      {/* //==================================================================//   */}
+
+      {/* <Funprops2 name = {"Dharmin"}/> */}
+
+      {/* //================================================// */}
+
+      {/* <Classprops name = {"Dharmin"} /> // classprops //  */}
+
+      {/* //================================================// */}
+
+      {/* <Distructuringprops name = {"Dharmin"} age ={23}/> */}
+
+      {/* //================================================// */}
+
+      {/* <Fragment /> */}
+
+      {/* //================================================// */}
+
+      {/* <ConditionalRen isMale = {false} />  */}
+
+      {/* //================================================// */}
+
+      {/* <MapKey /> */}
+
+      {/* //================================================// */}
+
+      {/* <Task inputType={"password"} /> */}
+
+      {/* //================================================// */}
+
+      <MapCom />
+      
+      {/* //================================================// */}
+
+      {/* <BasicExample /> */}
     </>
   );
 }
