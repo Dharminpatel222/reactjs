@@ -20,6 +20,9 @@ import MapKey from "../ConditionalRen-map-fragment/MapKey.jsx";
 import Task from "../ConditionalRen-map-fragment/Task.jsx";
 import BasicExample from '../CardProject/Bootstrap';
 import MapCom from '../CardProject/MapCom';
+import InputCom from '../Inputproject/InputCom';
+import Delete from '../Inputproject/Delete';
+import Update from '../Inputproject/Update';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -86,11 +89,23 @@ function App() {
 
       {/* //================================================// */}
 
-      <MapCom />
-      
+      {/* <MapCom /> */}
+
       {/* //================================================// */}
 
       {/* <BasicExample /> */}
+
+      {/* //================================================// */}
+
+      {/* <InputCom /> */}
+
+      {/* //================================================// */}
+
+      {/* <Delete />   */}
+
+      {/* //================================================// */}
+
+      <Update />
     </>
   );
 }

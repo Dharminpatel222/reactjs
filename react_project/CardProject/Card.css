@@ -1,14 +1,16 @@
-.card{
-    box-shadow: inset 5px 5px 12px gray,5px 5px 12px black;
-    border-radius: 10px;
-    width: 30vw;
-    display: flex;
-    flex-direction: column;
+.card {
+  width: 20%;
+  margin: 10px;
 }
-.card-img{
-    width: 100%;
+
+img {
+  width: 100%;
 }
-.card_con{
-    display: flex;
-    flex-direction: column;
+
+.con {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100vw;
+  background-color: lightcoral;
 }
