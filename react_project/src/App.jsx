@@ -23,6 +23,7 @@ import MapCom from '../CardProject/MapCom';
 import InputCom from '../Inputproject/InputCom';
 import Delete from '../Inputproject/Delete';
 import Update from '../Inputproject/Update';
+import Multipleinput from '../Inputproject/Multipleinput';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -105,7 +106,11 @@ function App() {
 
       {/* //================================================// */}
 
-      <Update />
+      {/* <Update /> */}
+
+      {/* //================================================// */}
+
+      <Multipleinput />
     </>
   );
 }
