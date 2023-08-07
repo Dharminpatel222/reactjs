@@ -39,10 +39,17 @@ export default function Multipleinput() {
   }
 
   function SaveChanges(){
-    arr.splice(ind,1,userData);
-    setarr([...arr]);
-    SetuserData('') //
     
+    if(ind || ind === 0){
+      arr.splice(ind, 1, userData);
+      setarr([...arr]);
+      SetuserData({
+        email: "",
+        name: "",
+        text: "",
+      });
+      setind(null)
+    }
   }
   return (
     <>
