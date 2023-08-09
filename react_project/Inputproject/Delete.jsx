@@ -16,11 +16,14 @@ export default function Delete() {
     setname("");
     console.log(arr);
 
+    localStorage.setItem("data",JSON.stringify([...arr,name]))
    
   }
   function Deletehandler(index){
     arr.splice(index,1);
     setarr([...arr]);
+
+    localStorage.setItem("data",JSON.stringify([...arr]))
   }
 
   function Deleteallhandler(){

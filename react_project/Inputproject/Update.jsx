@@ -3,7 +3,7 @@ import { Table } from "react-bootstrap";
 
 export default function Update() {
   const [name, setname] = useState("");
-  const [arr, setarr] = useState([]);
+  const [arr, setarr] = useState( getlocalstoragedata());
   const [ind, setind] = useState();
 
   function getdata(e) {
@@ -14,10 +14,14 @@ export default function Update() {
     setarr([...arr, name]);
     setname("");
     console.log(arr);
+
+    localStorage.setItem("data",JSON.stringify([...arr,name]))
   }
   function Deletehandler(index) {
     arr.splice(index, 1);
     setarr([...arr]);
+
+    localStorage.setItem('data',JSON.stringify([...arr]))
   }
   function Deleteallhandler() {
     setarr([]);
@@ -33,7 +37,21 @@ export default function Update() {
     setarr([...arr]);
     setname('');
     setind(null);
+
+    localStorage.setItem('data',JSON.stringify([...arr]))
   }
+
+  function getlocalstoragedata() {
+    let data = localStorage.getItem("data");
+    console.log(JSON.parse(data));
+
+    if (data) {
+      return JSON.parse(data);
+    } else {
+      return [];
+    }
+  }
+ 
   return (
     <>
       <div

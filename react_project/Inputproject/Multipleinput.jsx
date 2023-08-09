@@ -9,7 +9,7 @@ export default function Multipleinput() {
     text: "",
   });
 
-  const [arr, setarr] = useState([]);
+  const [arr, setarr] = useState(getlocalstoragedata());
 
   const[ind,setind] = useState();
 
@@ -25,10 +25,13 @@ export default function Multipleinput() {
       name: "",
       text: "",
     });
+    localStorage.setItem("data",JSON.stringify([...arr,userData]))
   }
   function Deletehandler(index) {
     arr.splice(index, 1);
     setarr([...arr]);
+
+    localStorage.setItem("data",JSON.stringify([...arr]))
   }
   function  AllDelete(e){
     setarr([]);
@@ -49,6 +52,19 @@ export default function Multipleinput() {
         text: "",
       });
       setind(null)
+    }
+
+    localStorage.setItem('data',JSON.stringify([...arr]));
+  }
+
+  function getlocalstoragedata(){
+    let data = localStorage.getItem("data");
+    console.log(JSON.parse(data));
+
+    if(data){
+      return JSON.parse(data);
+    }else{
+      return [];
     }
   }
   return (
