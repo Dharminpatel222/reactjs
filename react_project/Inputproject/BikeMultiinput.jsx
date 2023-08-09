@@ -43,9 +43,9 @@ export default function BikeMultiinput() {
 
   function AllDelete(){
     setarr([]);
+    // localStorage.setItem("data", JSON.stringify([]));
+    localStorage.removeItem("data");
 
-    
-    localStorage.setItem("data", JSON.stringify([]));
   }
 
   function Updatefun(data,index){

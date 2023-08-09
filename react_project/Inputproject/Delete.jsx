@@ -28,7 +28,8 @@ export default function Delete() {
 
   function Deleteallhandler(){
     setarr([]);
-    localStorage.setItem("data", JSON.stringify([]));
+    // localStorage.setItem("data", JSON.stringify([]));
+    localStorage.removeItem('data')
 
   }
   return (

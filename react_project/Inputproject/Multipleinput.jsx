@@ -36,7 +36,9 @@ export default function Multipleinput() {
   function  AllDelete(e){
     setarr([]);
 
-    localStorage.setItem("data", JSON.stringify([]));
+    // localStorage.setItem("data", JSON.stringify([]));
+    localStorage.removeItem("data");
+
 
   }
   function Updatefun(data,index){
