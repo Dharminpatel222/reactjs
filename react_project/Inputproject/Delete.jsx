@@ -15,6 +15,8 @@ export default function Delete() {
     setarr([...arr, name]);
     setname("");
     console.log(arr);
+
+   
   }
   function Deletehandler(index){
     arr.splice(index,1);
