@@ -11,7 +11,7 @@ export default function BikeMultiinput() {
     Price: "",
   });
 
-  const [arr, setarr] = useState([]);
+  const [arr, setarr] = useState(getlocalstoragedata());
 
   const [ind,setind] = useState();
 
@@ -30,11 +30,15 @@ export default function BikeMultiinput() {
       Price: "",
     });
     // console.log(arr); => only reference base
+
+    localStorage.setItem("data",JSON.stringify([...arr,userData]))
   }
 
   function Deletehandler(index){
     arr.splice(index,1);
     setarr([...arr]);
+
+    localStorage.setItem("data",JSON.stringify([...arr]))
   }
 
   function AllDelete(){
@@ -59,10 +63,22 @@ export default function BikeMultiinput() {
       });
       setind(null)
     }
+    localStorage.setItem("data", JSON.stringify([...arr]));
+
   }
+   function getlocalstoragedata() {
+     let data = localStorage.getItem("data");
+     console.log(JSON.parse(data));
+
+     if (data) {
+       return JSON.parse(data);
+     } else {
+       return [];
+     }
+   }
   return (
     <>
-      <Form style={{ marginLeft: "100px", marginTop: "100px" }}>
+      <Form style={{ marginLeft: "100px", marginTop: "30px" }}>
         <FormGroup>
           <Label for="exampleBikeName">Bike Name</Label>
           <Input
