@@ -11,44 +11,41 @@ export default function Multipleinput() {
 
   const [arr, setarr] = useState(getlocalstoragedata());
 
-  const[ind,setind] = useState();
+  const [ind, setind] = useState();
 
   function getdata(e) {
     SetuserData({ ...userData, [e.target.name]: e.target.value });
   }
 
   function addData(e) {
-       e.preventDefault();
+    e.preventDefault();
     setarr([...arr, userData]);
     SetuserData({
       email: "",
       name: "",
       text: "",
     });
-    localStorage.setItem("data",JSON.stringify([...arr,userData]))
+    localStorage.setItem("data", JSON.stringify([...arr, userData]));
   }
   function Deletehandler(index) {
     arr.splice(index, 1);
     setarr([...arr]);
 
-    localStorage.setItem("data",JSON.stringify([...arr]))
+    localStorage.setItem("data", JSON.stringify([...arr]));
   }
-  function  AllDelete(e){
+  function AllDelete(e) {
     setarr([]);
 
     // localStorage.setItem("data", JSON.stringify([]));
     localStorage.removeItem("data");
-
-
   }
-  function Updatefun(data,index){
+  function Updatefun(data, index) {
     SetuserData(data); //
     setind(index);
   }
 
-  function SaveChanges(){
-    
-    if(ind || ind === 0){
+  function SaveChanges() {
+    if (ind || ind === 0) {
       arr.splice(ind, 1, userData);
       setarr([...arr]);
       SetuserData({
@@ -56,19 +53,19 @@ export default function Multipleinput() {
         name: "",
         text: "",
       });
-      setind(null)
+      setind(null);
     }
 
-    localStorage.setItem('data',JSON.stringify([...arr]));
+    localStorage.setItem("data", JSON.stringify([...arr]));
   }
 
-  function getlocalstoragedata(){
+  function getlocalstoragedata() {
     let data = localStorage.getItem("data");
     console.log(JSON.parse(data));
 
-    if(data){
+    if (data) {
       return JSON.parse(data);
-    }else{
+    } else {
       return [];
     }
   }
@@ -114,6 +111,32 @@ export default function Multipleinput() {
             value={userData.text}
           />
         </FormGroup>
+        <FormGroup check style={{ marginTop: "10px" }}>
+          <Input type="checkbox" /> <Label check>Male</Label>
+        </FormGroup>
+        <FormGroup check style={{ marginTop: "10px" }}>
+          <Input type="checkbox" /> <Label check>Female</Label>
+        </FormGroup>
+        <FormGroup tag="fieldset" style={{marginTop:"10px"}}>
+          <legend>Radio Buttons</legend>
+          <FormGroup check>
+            <Input name="radio1" type="radio" />{" "}
+            <Label check>
+              Option one is this and that—be sure to include why it‘s great
+            </Label>
+          </FormGroup>
+          <FormGroup check>
+            <Input name="radio1" type="radio" />{" "}
+            <Label check>
+              Option two can be something else and selecting it will deselect
+              option one
+            </Label>
+          </FormGroup>
+          <FormGroup check disabled>
+            <Input disabled name="radio1" type="radio" />{" "}
+            <Label check>Option three is disabled</Label>
+          </FormGroup>
+        </FormGroup>
         <Button style={{ marginTop: "10px" }} onClick={(e) => addData(e)}>
           Submit
         </Button>
@@ -125,11 +148,18 @@ export default function Multipleinput() {
         </Button>
         <Button
           style={{ marginTop: "10px", marginLeft: "10px" }}
-          onClick={(e) => SaveChanges(e)}>
+          onClick={(e) => SaveChanges(e)}
+        >
           SaveChanges
         </Button>
       </Form>
-      <Table striped bordered hover dsty style={{ marginLeft: "100px",marginTop:'20px' }}>
+      <Table
+        striped
+        bordered
+        hover
+        dsty
+        style={{ marginLeft: "100px", marginTop: "20px" }}
+      >
         <thead>
           <tr>
             <th>No.</th>
@@ -148,7 +178,8 @@ export default function Multipleinput() {
                 <td>{e.text}</td>
                 <td>
                   <button
-                    className="btn btn-primary" style={{marginRight:"10px"}}
+                    className="btn btn-primary"
+                    style={{ marginRight: "10px" }}
                     onClick={() => Deletehandler()}
                   >
                     Delete
