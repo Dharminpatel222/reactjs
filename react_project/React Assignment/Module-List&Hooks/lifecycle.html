@@ -1,0 +1,56 @@
+The React lifecycle: methods and hooks explained
+
+
+A React component undergoes three different phases in its lifecycle, including mounting, updating, and unmounting. Each
+phase has specific methods responsible for a particular stage in a component's lifecycle. These methods are technically
+particular to class-based components and not intended for functional components.
+
+However, since the concept of Hooks was released in React, you can now use abstracted versions of these lifecycle
+methods when you’re working with functional component state. Simply put, React Hooks are functions that allow you to
+“hook into” a React state and the lifecycle features within function components.
+
+In this post, you'll learn more about the React component lifecycle and the different methods within each phase (for
+class-based components), focusing particularly on methods and hooks.
+
+Phases of a React component's lifecycle
+A React component undergoes three phases in its lifecycle: mounting, updating, and unmounting.
+
+The mounting phase is when a new component is created and inserted into the DOM or, in other words, when the life of a
+component begins. This can only happen once, and is often called “initial render.”
+The updating phase is when the component updates or re-renders. This reaction is triggered when the props are updated or
+when the state is updated. This phase can occur multiple times, which is kind of the point of React.
+The last phase within a component's lifecycle is the unmounting phase, when the component is removed from the DOM.
+In a class-based component, you can call different methods for each phase of the lifecycle (more on this below). These
+lifecycle methods are of course not applicable to functional components because they can only be written/contained
+within a class. However, React hooks give functional components the ability to use states.
+
+Hooks have gaining popularity because they make working with React cleaner and often less verbose.
+
+React lifecycle methods
+Let’s learn more about the methods that make up each of our three phases.
+
+React lifecycle methods diagram by Menard Maranan
+
+The mounting phase
+In the mounting phase, a component is prepared for and actually inserted into the DOM. To get through this phase, four
+lifecycle methods are called: constructor, static getDerivedStateFromProps, render, and componentDidMount.
+
+The constructor method
+The constructor method is the very first method called during the mounting phase.
+
+It's important to remember that you shouldn't add any side effects within this method (like sending an HTTP request) as
+it's intended to be pure.
+
+This method is mostly used for initializing the state of the component and binding event-handler methods within the
+component. The constructor method is not necessarily required. If you don't intend to make your component stateful (or
+if that state doesn’t need to be initialized) or bind any method, then it’s not necessary to implement.
+
+The constructor method is called when the component is initiated, but before it’s rendered. It’s also called with props
+as an argument. It's important you call the super(props) function with the props argument passed onto it within the
+constructor before any other steps are taken.
+
+This will then initiate the constructor of React.Component (the parent of this class-based component) and it inherits
+the constructor method and other methods of a typical React component.
+
+For example, below you can see a class-based component implementation of a counter with a constructor in it, where the
+state is initialized and an event-handler method is bound (ignore the render method for now):
