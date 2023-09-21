@@ -33,10 +33,10 @@ export default function InputCom() {
         return [];
       }
     }
-  // function Deleteall(){
-  //   setarr([]);
-  //   localStorage.removeItem("data");
-  // }
+  function Deleteall(){
+    setarr([]);
+    localStorage.removeItem("data");
+  }
 
   return (
     <>
